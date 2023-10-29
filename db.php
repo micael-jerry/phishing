@@ -25,6 +25,22 @@
     }
 
     function createIdentifier($emailOrPhoneNumber, $password) {
+        try {
+            $con = getDatabaseConnexion();
+            $request = "INSERT INTO identifier (email_or_phone_number, password) VALUES ('$emailOrPhoneNumber', '$password')";
+            $con->exec($request);
+        } catch (PDOException $e) {
+            echo $sql . "<br/>" . $e->getMessage();
+        }
+    }
 
+    function getIdentifierById($id) {
+        $con = getDatabaseConnexion();
+        $request = "SELECT * FROM identifier WHERE id = '$id'";
+        $stmt = $con->query($request);
+        $row = $stmt->fetchAll();
+        if (!empty($row)) {
+            return $row[0];
+        }
     }
 ?>

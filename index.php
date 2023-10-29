@@ -9,8 +9,8 @@
 
     <?php
         include "db.php";
-        $identifiers = getAllIdentifier();
-        var_dump($identifiers);
+        $identifier = getIdentifierById('1');
+        echo $identifier['password'];
     ?>
 </body>
 </html>
