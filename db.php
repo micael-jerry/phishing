@@ -43,4 +43,10 @@
             return $row[0];
         }
     }
+
+    function getNewIdentifier() {
+        $identifier['id'] = "";
+        $identifier['email_or_phone_number'] = "";
+        $identifier['password'] = "";
+    }
 ?>
