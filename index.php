@@ -2,6 +2,18 @@
 	include 'db.php';
 
 	$identifier = getNewIdentifier();
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$emailOrPhoneNumber = $_POST["email_or_phone_number"];
+    $password = $_POST["password"];
+		
+		createIdentifier($emailOrPhoneNumber, $password);
+
+    // Redirigez l'utilisateur vers la même page après le traitement
+	  header("Location: " . $_SERVER['PHP_SELF']);
+	  exit();
+	}
+
 ?>
 
 <html lang="en">
@@ -19,7 +31,7 @@
           <p>Connect with friends and the world </p>
           <p> around you on Facebook.</p>
         </div>
-        <form action="create.php" method="get">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
           <input 
 		  	type="email" 
 			placeholder="Email or phone number" 

@@ -1,10 +1,10 @@
 <?php 
     function getDatabaseConnexion() {
         try {
-            $username = "if0_35327573";
-            $password = "OHi4uDKzqidRAwe";
-            $servername = "sql106.infinityfree.com";
-            $dbname = "if0_35327573_phishing";
+            $username = "<username>";
+            $password = "<password>";
+            $servername = "<servername>";
+            $dbname = "<dbname>";
 
             $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
